@@ -1,5 +1,2 @@
 alexis
-<<<<<<< HEAD
-=======
 resta
->>>>>>> b24e42a62ba17daa55af04c046f8268dc45b338d
