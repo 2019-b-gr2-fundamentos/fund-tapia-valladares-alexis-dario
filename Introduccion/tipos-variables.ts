@@ -6,6 +6,13 @@ console.log(repuestaTipoNumero)
 console.log(decimal);
 typeof numero
 typeof decimal
+const letra = "a";
+const palabra = "palabra"
+console.log(typeof letra);
+console.log(typeof palabra);
+
+const hijos = null;
+console.log(typeof hijos)
 
 //Gestor de paquetes de nodejs 
 //Su funcion es comunicarse con el repositorio y descargar el "paquete"
