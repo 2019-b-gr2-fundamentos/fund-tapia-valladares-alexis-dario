@@ -7,4 +7,6 @@ console.log(decimal);
 typeof numero
 typeof decimal
 
-//Gestor de paquetes de nodejs
+//Gestor de paquetes de nodejs 
+//Su funcion es comunicarse con el repositorio y descargar el "paquete"
+//Existen dos npm y yarn
