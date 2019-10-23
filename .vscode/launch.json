@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Variables",
+            "request": "launch",
+            "mainClass": "Variables",
+            "projectName": "fund-tapia-valladares-alexis-dario_8d95584"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Hello",
             "request": "launch",
             "mainClass": "Hello"
