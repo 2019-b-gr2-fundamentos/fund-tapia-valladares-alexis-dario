@@ -1,5 +1,4 @@
 //Variables Primitivas JAVA
-
 /*
 byte: emplea un solo byte (8 bits) de almacenamiento
     Esto permite almacenar valores en el rango [-128, 127]
@@ -17,7 +16,6 @@ boolean: tiene la finalidad de facilitar el trabajo con valores "verdadero/falso
     Los dos valores posibles de este tipo son true y false
 char: se utiliza para almacenar caracteres individuales (letras)
 */
-package com.company;
 
 public class Main {
 
