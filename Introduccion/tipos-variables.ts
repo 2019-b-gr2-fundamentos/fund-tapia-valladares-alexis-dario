@@ -20,7 +20,6 @@ console.log(typeof fecha)
 const casado = false;
 console.log(typeof casado)
 
-
 //Gestor de paquetes de nodejs 
 //Su funcion es comunicarse con el repositorio y descargar el "paquete"
 //Existen dos npm y yarn
