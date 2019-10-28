@@ -1,4 +1,4 @@
-let numeroUno = 1; //camelCase
+/*let numeroUno = 1; //camelCase
 const NUMERO_UNO = 1;
 // NUMEROUNO -> TODO MAYUSCULA (SEPARACION NO)
 // NUMERO_UNO -> mayusculas con guion bajo
@@ -22,3 +22,39 @@ resultado = 4 % 2; // = 0
 resultado = 4 % 3; // = 1
 resultado = 7 % 3; // = 1
 console.log("pera" + 2);
+//STRINGS
+const mensaje = "\"Hola Mundo\"";
+const saludo = "\"Adios Mundo\"";
+//console.log(mensaje +"1\t\t\t 3\n"+ saludo);
+//template strings
+const edad = 30;
+const saludoEdad = `Mi edad es: ${edad}`;
+const saludoCompleto = `${mensaje} \n${saludo}`;
+console.log(saludoEdad);
+console.log(saludoCompleto);
+//Contamos elementos
+const nombreLongitud = "Alexis Tapia";
+console.log(nombreLongitud.length);
+//Eliminar espacios al principio y al final
+console.log(nombreLongitud.trim());
+//Cambiar a mayusculas o minusculas
+console.log(nombreLongitud.toUpperCase());
+console.log(nombreLongitud.toLocaleLowerCase());
+//Reemplazar
+console.log(nombreLongitud);
+console.log(nombreLongitud.replace("i", "a"));
+console.log(nombreLongitud);
+//Buscar caracter
+console.log(nombreLongitud.search("z"));
+console.log(nombreLongitud.search("e"));
+//Separar
+console.log(nombreLongitud.slice(0, 3));
+//Indice de
+console.log(nombreLongitud.indexOf("l"));
+console.log(nombreLongitud.indexOf("z"));
+console.log(nombreLongitud.includes("T"));
+console.log(nombreLongitud.includes("z"));
+console.log(nombreLongitud.endsWith("x"));
+console.log(nombreLongitud.startsWith("x"));
+console.log(nombreLongitud.substring(0, 6));
+*/
