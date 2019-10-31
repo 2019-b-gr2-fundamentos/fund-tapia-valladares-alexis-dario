@@ -55,3 +55,59 @@ if(casadoYMosero){
     entonces llegue tarde, pero si no pasa nada de eso me poongo a llorar 
     porque me levante temprano.
 */
+
+//TRUTY & FALSY
+if(undefined){
+    console.log("Truty");
+}else{
+    console.log("Falsy");
+}
+
+//SWITCH
+/*const calculo = "sumar";    
+switch(calculo){
+    case sumar:
+        break;
+    case restar:
+        break;
+    case multiplicar:
+        break;
+    case dividir:
+        break;
+    default:
+        break;
+    }
+}
+*/
+const edadString = prompt("Ingrese la edad: ");
+const edad = Number(edadString);
+
+if(edad>0 && edad<=6){
+    console.log("Guagua");
+}else if (edad>6 && edad<=18){
+    console.log("Guambra");
+}else if (edad>18 && edad <= 65){
+    console.log("Longo");
+}else if(edad >65){
+    console.log("Ruko");
+}else if(edad <0){
+    console.log("Edad en rango incorreccto")
+}
+
+if(edad>0 && edad<=6){
+    console.log("Guagua");
+}else{
+    if(edad>6 && edad<=18){
+        console.log("Guambra");
+    }else{
+        if(edad>18 && edad <=65){
+            console.log("Longo");
+        }else{
+            if(edad>65){
+                console.log("Ruko");
+            }else{
+                console.log("Edad incorercta");
+            }
+        }
+    }
+}
