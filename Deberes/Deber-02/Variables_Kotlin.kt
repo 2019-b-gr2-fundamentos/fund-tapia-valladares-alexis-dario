@@ -14,5 +14,5 @@
 //String: Permite almacenar cadenas de caracteres. Ej. var nombre: String = "Ivan"
 //Arrays: Permite almacenar listas de objetos. Ej. val misColoresFavoritos = arrayOf("naranja", "azul", "rojo", "negro")*/
 
-//En Kotlin tambien podemos no mencionarel tipo de dato que vamos a utlizar, ya que
+//En Kotlin tambien podemos no mencionar el tipo de dato que vamos a utlizar, ya que
 //este lenguaje reconoce de manera automatica los tipos de datos que declaramos.
