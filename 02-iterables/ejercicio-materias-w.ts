@@ -17,7 +17,7 @@ let Calculo=0;
 let Fisica=0;
 let Ingles=0;
 
-do{
+while (deberes < 1000) {
     deberes++;
     if((deberes%13)==0){
         Ingles++;
@@ -34,7 +34,7 @@ do{
     }else if((deberes%2)!=0){
         Analisis++;
     }
-}while (deberes < 1000);
+}
 
 console.log(`\nTotal Deberes = ${deberes}\n`);
 console.log(`Deberes de Analisis = ${Analisis}`);
