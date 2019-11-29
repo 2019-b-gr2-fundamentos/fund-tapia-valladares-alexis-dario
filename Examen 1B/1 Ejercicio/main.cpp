@@ -14,11 +14,13 @@ double desplazamientoXParabolico (double Vo, double angulo, double tiempo);
 double promedioParteEntera(double numUno, double numDos);
 double distanciaRecorrida(double Vo, double tiempo, double aceleracion);
 double distanciaDosPuntos(double x1,double x2,double y1,double y2);
+double indiceMasaCorporal(double peso, double altura);
+double gasesIdeales(double presion, double moles, double r, double temperatura);
 void repetirSalir();
 void calculadora();
 
 int main() {
-    cout << "CALCULADORA" << std::endl;
+    cout << "CALCULADORA" <<endl;
     calculadora();
     return 0;
 }
@@ -49,9 +51,23 @@ void pedirVariables(double *variableUno, double *variableDos, double *variableTr
         cin >> *variableUno;
         cout << "Ingrese Y1 : ";
         cin >> *variableTres;
-        cout >> "Ingrese X2 : ";
+        cout << "Ingrese X2 : ";
         cin >> *variableDos;
         cout << "Ingrese Y2 : ";
+        cin >> *variableCuatro;
+    }else if (opcion == 9){
+        cout << "Ingrese el Peso (kg) : ";
+        cin >> *variableUno;
+        cout << "Ingrese la Altura (m) : ";
+        cin >> *variableDos;
+    }else{
+        cout << "Ingrese la Presion (at): ";
+        cin >> *variableUno;
+        cout << "Ingrese los Moles : ";
+        cin >>*variableDos;
+        cout << "Ingrese la Constante de Gases Ideales: ";
+        cin >> *variableTres;
+        cout << "Ingrese la Temperatura (k): ";
         cin >> *variableCuatro;
     }
 }
@@ -88,62 +104,15 @@ double distanciaDosPuntos(double x1,double x2,double y1,double y2){
     distancia = sqrt((pow((x2-x1),2))+(pow((y2-y1),2)));
     return distancia;
 }
-void calculadora(){
-    int opcion;
-    double resultado, variable1, variable2, variable3,variable4;
-    cout<<"\n1) Suma\n2) Resta\n3) Multiplicacion\n4) Division\n5) Desplazamiento en X Tiro Parabolico";
-    cout<<"\n6) Parte Entera\n7) Distancia Recorrida\n8)\n9)\n10)\n";
-    cout<<"Que operacion desea hacer ?\nIngrese el numero de la opcion: ";
-    cin>>opcion;
-    if(opcion == 1){
-        pedir2Variables(&variable1,&variable2);
-        resultado=suma(variable1,variable2);
-        cout<<"La suma de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
-        repetirSalir();
-    }else if(opcion == 2){
-        pedir2Variables(&variable1,&variable2);
-        resultado=resta(variable1,variable2);
-        cout<<"La resta de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
-        repetirSalir();
-    }else if(opcion ==3){
-        pedir2Variables(&variable1,&variable2);
-        resultado=multiplicacion(variable1,variable2);
-        cout<<"La multiplicacion de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
-        repetirSalir();
-    }else if(opcion ==4){
-        pedir2Variables(&variable1,&variable2);
-        resultado=division(variable1,variable2);
-        cout<<"La division de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
-        repetirSalir();
-    }else if(opcion ==5){
-        pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
-        resultado=desplazamientoXParabolico(variable1,variable2,variable3);
-        cout<<"El Desplazamiento en X en t ("<<variable3<<") = "<<resultado<<endl;
-        repetirSalir();
-    }else if(opcion ==6){
-        pedir2Variables(&variable1,&variable2);
-        resultado=promedioParteEntera(variable1,variable2);
-        cout<<"La parte entera es : "<<resultado;
-        repetirSalir();
-    }else if (opcion==7){
-        pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
-        resultado=distanciaRecorrida(variable1,variable2,variable3);
-        cout<<"La Distancia Recorrida a t("<<variable2<<") = "<<resultado<<endl;
-        repetirSalir();
-    }else if (opcion==8){
-        pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
-        resultado=distanciaDosPuntos(variable1,variable2,variable3,variable4);
-        cout<<"La distancia entre P1("<<variable1<<","<<variable3<<" y P2("<<variable2<<","<<variable4<<" = "<<resultado;
-        repetirSalir();
-    }else if (opcion==9){
-
-    }else if (opcion==10){
-
-    }
-    else{
-        cout<<"\nEsa opcion no existe =(\n";
-        calculadora();
-    }
+double indiceMasaCorporal(double peso, double altura){
+    double imc;
+    imc = peso/pow(altura,2);
+    return imc;
+}
+double gasesIdeales(double presion, double moles, double r, double temperatura){
+    double volumen;
+    volumen = (moles*r*temperatura)/presion;
+    return volumen;
 }
 void repetirSalir(){
     int op;
@@ -157,5 +126,68 @@ void repetirSalir(){
     }else{
         cout<<"\nEsa opcion no existe!\n";
         repetirSalir();
+    }
+}
+void calculadora(){
+    int opcion;
+    double resultado, variable1, variable2, variable3,variable4;
+    cout<<"\n1) Suma\n2) Resta\n3) Multiplicacion\n4) Division\n5) Desplazamiento en X Tiro Parabolico";
+    cout<<"\n6) Parte Entera\n7) Distancia Recorrida\n8) Distancia entre Dos Puntos\n9) Indice de Masa Corporal\n10) Volumen Gases Ideales\n";
+    cout<<"Que operacion desea hacer ?\nIngrese el numero de la opcion: ";
+    cin>>opcion;
+    if(opcion == 1){//Suma
+        pedir2Variables(&variable1,&variable2);
+        resultado=suma(variable1,variable2);
+        cout<<"La suma de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        repetirSalir();
+    }else if(opcion == 2){//Resta
+        pedir2Variables(&variable1,&variable2);
+        resultado=resta(variable1,variable2);
+        cout<<"La resta de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        repetirSalir();
+    }else if(opcion ==3){//Multiplicacion
+        pedir2Variables(&variable1,&variable2);
+        resultado=multiplicacion(variable1,variable2);
+        cout<<"La multiplicacion de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        repetirSalir();
+    }else if(opcion ==4){//Division
+        pedir2Variables(&variable1,&variable2);
+        resultado=division(variable1,variable2);
+        cout<<"La division de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        repetirSalir();
+    }else if(opcion ==5){//Desplazamiento en X
+        pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
+        resultado=desplazamientoXParabolico(variable1,variable2,variable3);
+        cout<<"El Desplazamiento en X en t ("<<variable3<<") = "<<resultado<<endl;
+        repetirSalir();
+    }else if(opcion ==6){//Promedio Parte Entera
+        pedir2Variables(&variable1,&variable2);
+        resultado=promedioParteEntera(variable1,variable2);
+        cout<<"La parte entera es : "<<resultado;
+        repetirSalir();
+    }else if (opcion==7){//Distancia Recorrida
+        pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
+        resultado=distanciaRecorrida(variable1,variable2,variable3);
+        cout<<"La Distancia Recorrida a t("<<variable2<<") = "<<resultado<<endl;
+        repetirSalir();
+    }else if (opcion==8){//Distancia 2 Puntos
+        pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
+        resultado=distanciaDosPuntos(variable1,variable2,variable3,variable4);
+        cout<<"La distancia entre P1("<<variable1<<","<<variable3<<") y P2("<<variable2<<","<<variable4<<") = "<<resultado;
+        repetirSalir();
+    }else if (opcion==9){//Indice Masa Corporal
+        pedirVariables(&variable1,&variable2,NULL,NULL,opcion);
+        resultado=indiceMasaCorporal(variable1,variable2);
+        cout<<"El indice de Masa Corporal ="<<resultado<<endl;
+        repetirSalir();
+    }else if (opcion==10){//Gases Ideales
+        pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
+        resultado=gasesIdeales(variable1,variable2,variable3,variable4);
+        cout<<"El Volumen = "<<resultado<<" [litros]"<<endl;
+        repetirSalir();
+    }
+    else{
+        cout<<"\nEsa opcion no existe =(\n";
+        calculadora();
     }
 }
