@@ -22,7 +22,7 @@ console.log('arregloNumeros', arregloNumeros)
 // 1) Elementos
 // 2) Indices (0 index based) -> POSICION
 // 3) Longitud -> # Elementos
-console.log(arregloNumeros.length);
+console.log("*-*-*-*-*"+arregloNumeros.length);
 
 const indiceElmentoUno = 0;
 arregloNumeros[indiceElmentoUno];
