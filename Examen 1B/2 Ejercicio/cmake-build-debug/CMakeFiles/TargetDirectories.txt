@@ -1,0 +1,3 @@
+C:/Users/alexi/OneDrive/Documentos/fund-tapia-valladares-alexis-dario/Examen 1B/2 Ejercicio/cmake-build-debug/CMakeFiles/2_Ejercicio.dir
+C:/Users/alexi/OneDrive/Documentos/fund-tapia-valladares-alexis-dario/Examen 1B/2 Ejercicio/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/alexi/OneDrive/Documentos/fund-tapia-valladares-alexis-dario/Examen 1B/2 Ejercicio/cmake-build-debug/CMakeFiles/rebuild_cache.dir

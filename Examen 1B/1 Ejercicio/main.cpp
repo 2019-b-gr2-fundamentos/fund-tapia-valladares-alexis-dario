@@ -133,55 +133,65 @@ void calculadora(){
     double resultado, variable1, variable2, variable3,variable4;
     cout<<"\n1) Suma\n2) Resta\n3) Multiplicacion\n4) Division\n5) Desplazamiento en X Tiro Parabolico";
     cout<<"\n6) Parte Entera\n7) Distancia Recorrida\n8) Distancia entre Dos Puntos\n9) Indice de Masa Corporal\n10) Volumen Gases Ideales\n";
-    cout<<"Que operacion desea hacer ?\nIngrese el numero de la opcion: ";
+    cout<<"\nQue operacion desea hacer ?\nIngrese el numero de la opcion: ";
     cin>>opcion;
     if(opcion == 1){//Suma
+    	cout<<"\nSuma\n";
         pedir2Variables(&variable1,&variable2);
         resultado=suma(variable1,variable2);
         cout<<"La suma de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion == 2){//Resta
-        pedir2Variables(&variable1,&variable2);
+        cout<<"\nResta\n";
+		pedir2Variables(&variable1,&variable2);
         resultado=resta(variable1,variable2);
         cout<<"La resta de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==3){//Multiplicacion
-        pedir2Variables(&variable1,&variable2);
+        cout<<"\nMultiplicacion\n";
+		pedir2Variables(&variable1,&variable2);
         resultado=multiplicacion(variable1,variable2);
         cout<<"La multiplicacion de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==4){//Division
-        pedir2Variables(&variable1,&variable2);
+        cout<<"\nDivision\n";
+		pedir2Variables(&variable1,&variable2);
         resultado=division(variable1,variable2);
         cout<<"La division de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==5){//Desplazamiento en X
-        pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
+        cout<<"\nDesplazamiento en X\n";
+		pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
         resultado=desplazamientoXParabolico(variable1,variable2,variable3);
         cout<<"El Desplazamiento en X en t ("<<variable3<<") = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==6){//Promedio Parte Entera
-        pedir2Variables(&variable1,&variable2);
+        cout<<"\nPromedio Parte Entera\n";
+		pedir2Variables(&variable1,&variable2);
         resultado=promedioParteEntera(variable1,variable2);
         cout<<"La parte entera es : "<<resultado;
         repetirSalir();
     }else if (opcion==7){//Distancia Recorrida
-        pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
+        cout<<"\nDistancia Recorrida\n";
+		pedirVariables(&variable1,&variable2,&variable3,NULL,opcion);
         resultado=distanciaRecorrida(variable1,variable2,variable3);
         cout<<"La Distancia Recorrida a t("<<variable2<<") = "<<resultado<<endl;
         repetirSalir();
     }else if (opcion==8){//Distancia 2 Puntos
-        pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
+        cout<<"\nDistancia 2 Puntos\n";
+		pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
         resultado=distanciaDosPuntos(variable1,variable2,variable3,variable4);
         cout<<"La distancia entre P1("<<variable1<<","<<variable3<<") y P2("<<variable2<<","<<variable4<<") = "<<resultado;
         repetirSalir();
     }else if (opcion==9){//Indice Masa Corporal
-        pedirVariables(&variable1,&variable2,NULL,NULL,opcion);
+        cout<<"\nIndice de Masa Corporal\n";
+		pedirVariables(&variable1,&variable2,NULL,NULL,opcion);
         resultado=indiceMasaCorporal(variable1,variable2);
         cout<<"El indice de Masa Corporal ="<<resultado<<endl;
         repetirSalir();
     }else if (opcion==10){//Gases Ideales
-        pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
+        cout<<"\nVolumen Gases Ideales\n";
+		pedirVariables(&variable1,&variable2,&variable3,&variable4,opcion);
         resultado=gasesIdeales(variable1,variable2,variable3,variable4);
         cout<<"El Volumen = "<<resultado<<" [litros]"<<endl;
         repetirSalir();
