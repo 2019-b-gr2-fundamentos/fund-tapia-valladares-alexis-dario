@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/alexi/OneDrive/Documentos/fund-tapia-valladares-alexis-dario/Examen 1B/1 Ejercicio/main.cpp
+iostream
+-
+conio.h
+-
+cmath
+-
+math.h
+-
+

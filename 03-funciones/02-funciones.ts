@@ -16,13 +16,15 @@ function main(){
 }
 
 function calculadora(){
-    const operacion:string = prompt('Selecciona una operacion:\n1) Suma\n2) Resta\n3) Multiplicacion\n4) Division');
+    const operacion:string = prompt('Selecciona una operacion:\n1) Suma\n2) Resta\n3) Multiplicacion\n4) Division\n5) FIN');
     const esSuma:boolean = operacion =="suma"||operacion =="1"||operacion =="suma-1";
     const esResta:boolean = operacion =="resta"||operacion =="2"||operacion =="resta-2";
     const esMultiplicacion:boolean = operacion == "multiplicacion"||operacion == "3"||operacion == "multiplicacion-3";
     const esDivision:boolean = operacion =="division" ||operacion =="4" ||operacion =="division-4";
+    const fin:boolean = operacion == "fin" || operacion == "5" || operacion == "fin-5";
     const estaValida:boolean = esSuma || esResta || esDivision || esMultiplicacion;
-
+    console.log('\n'+esDivision+'\n'+esSuma);
+    
     if(estaValida){
         const numUno:number = +prompt("Numero 1: ");
         const numDos:number = +prompt("Numero 2: ");
@@ -40,7 +42,12 @@ function calculadora(){
             resultado=dividir(numUno,numDos);
         }
         console.log(resultado);
-    }else{
         calculadora();
+    }else{
+        if(fin){
+            console.log("ADIOS :'(");
+        }else{
+            calculadora();
+        }
     }
 }
