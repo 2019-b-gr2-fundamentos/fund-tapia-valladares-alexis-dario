@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/alexi/OneDrive/Documentos/fund-tapia-valladares-alexis-dario/Examen 1B/2 Ejercicio/main.cpp
+iostream
+-
+conio.h
+-
+cstdlib
+-
+cstdio
+-
+cstring
+-
+
