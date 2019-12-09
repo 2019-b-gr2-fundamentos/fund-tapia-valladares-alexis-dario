@@ -53,7 +53,7 @@ void aniadir() {
 	}while(opcion == 1 && opcion ==2);   
 }
 void actualizar(){
-    //system("cls");
+    system("cls");
     int act,opcion;
     cout<<"\n**Actualizar**\nLista de Digimones existentes:\n";
     listar();
@@ -100,19 +100,15 @@ void borrar(){
     numDigimon=numDigimon-1;
     cout<<"\nLa lita de Digimones se ha actualizado\n";
     listar();
-    cout<<"\nDesea eliminar mas nombres?\n1)Si\t2)No\nIngrese el numero de la opcion : ";
-    cin>>opcion;
-    while (opcion!=1||opcion!=2){
+    do{
+        cout<<"\nDesea eliminar mas nombres?\n1)Si\t2)No\nIngrese el numero de la opcion : ";
+    	cin>>opcion;
         if(opcion==1){
             borrar();
         }else if(opcion==2){
             terminar();
         }
-        cout<<"\nEsa opcion no existe =(\n";
-        cout<<"\nDesea eliminar mas nombres?\n1)Si\t2)No\nIngrese el numero de la opcion : ";
-        cin>>opcion;
-    }
-
+    }while(opcion == 1 && opcion ==2);
 }
 void menu(){
     int opcion;
@@ -153,6 +149,7 @@ void terminar(){
     cout<<"\nQue desea hacer?\n1) Volver al Menu\t2) Finalizar\nIngrese la opcion : ";
     cin>>opcion;
     if(opcion==1){
+    	system("cls");
         menu();
     }else if(opcion==2){
         cout<<"\nAdios! =D\n";
