@@ -145,19 +145,19 @@ void calculadora(){
         cout<<"\nResta\n";
 		pedir2Variables(&variable1,&variable2);
         resultado=resta(variable1,variable2);
-        cout<<"La resta de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        cout<<"La resta de "<<variable1<<" - "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==3){//Multiplicacion
         cout<<"\nMultiplicacion\n";
 		pedir2Variables(&variable1,&variable2);
         resultado=multiplicacion(variable1,variable2);
-        cout<<"La multiplicacion de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        cout<<"La multiplicacion de "<<variable1<<" * "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==4){//Division
         cout<<"\nDivision\n";
 		pedir2Variables(&variable1,&variable2);
         resultado=division(variable1,variable2);
-        cout<<"La division de "<<variable1<<" + "<<variable2<<" = "<<resultado<<endl;
+        cout<<"La division de "<<variable1<<" / "<<variable2<<" = "<<resultado<<endl;
         repetirSalir();
     }else if(opcion ==5){//Desplazamiento en X
         cout<<"\nDesplazamiento en X\n";
