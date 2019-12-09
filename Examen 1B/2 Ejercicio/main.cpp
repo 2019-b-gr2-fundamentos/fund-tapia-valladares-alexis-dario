@@ -75,7 +75,6 @@ void actualizar(){
 	}while(opcion == 1 && opcion ==2);   
 }
 void borrar(){
-    system("cls");
 	int elm,opcion;
     //string *antiguoArreglo;
     system("cls");
