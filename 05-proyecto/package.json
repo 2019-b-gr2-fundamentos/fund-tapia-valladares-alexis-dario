@@ -1,0 +1,20 @@
+{
+  "name": "alexis-tapia-calculadora",
+  "version": "1.0.1",
+  "description": "calculadora",
+  "main": "index.js",
+  "dependencies": {
+    "alexis-tapia": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "tsc index.ts && node index.js"
+  },
+  "author": "Alexis Tapia",
+  "license": "ISC",
+  "keywords": [
+    "epn",
+    "calculadora",
+    "fundamentos"
+  ]
+}

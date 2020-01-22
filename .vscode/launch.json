@@ -1,23 +1,13 @@
 {
     "configurations": [
         {
-            "type": "java",
-            "name": "CodeLens (Launch) - Variables",
+            "type": "node",
             "request": "launch",
-            "mainClass": "Variables",
-            "projectName": "fund-tapia-valladares-alexis-dario_8d95584"
+            "name": "Debug matrices",
+            "program": "${workspaceFolder}/03-funciones/matrices.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
         },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Hello",
-            "request": "launch",
-            "mainClass": "Hello"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Hola",
-            "request": "launch",
-            "mainClass": "Hola"
-        }
     ]
 }
