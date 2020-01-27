@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function leerArchivo() {
-    console.log('Leer Archivo');
+var fs = require("fs");
+function leerArchivo(path) {
+    var resultado = fs.readFileSync(path, 'utf-8');
+    console.log(resultado);
+    return resultado;
 }
 exports.leerArchivo = leerArchivo;
