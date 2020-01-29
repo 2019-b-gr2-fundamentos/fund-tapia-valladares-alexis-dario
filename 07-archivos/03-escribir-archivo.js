@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 function escribirArchivo(path, contenido) {
-    fs.writeFileSync('./ejemplo.txt', 'NUEVO CONTENIDO :D' + contenido, 'utf-8');
+    fs.writeFileSync(path, // PATH
+    contenido, // CONTENIDO
+    'utf8' // CODIFICACION
+    );
 }
 exports.escribirArchivo = escribirArchivo;

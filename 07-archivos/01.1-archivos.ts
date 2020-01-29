@@ -2,7 +2,6 @@ import { leerArchivo } from "./02-leer-archivo";
 import { escribirArchivo } from "./03-escribir-archivo";
 import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts';
-
 async function main(){
 
     let contador = 1;
@@ -10,7 +9,13 @@ async function main(){
         './ejemplo.txt'
     );
     console.log('contenidoArchivo', contenidoArchivo);
-    const arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+    let arregloCargadoDeArchivo;
+    try{
+        arregloCargadoDeArchivo=JSON.parse(contenidoArchivo);
+    }catch(error){
+        arregloCargadoDeArchivo=[];
+        console.error('Error parseanddo archivo')
+    }
     const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
     const arregloPreguntas = [
         { 
@@ -74,6 +79,13 @@ async function main(){
                 }
             );
     console.log(estudianteEncontrado);
+
+    const arregloTexto = JSON.stringify(arregloEstudiantes);
+    console.log(arregloTexto);
+    escribirArchivo(
+         './ejemplo.txt',
+         arregloTexto
+    );
 }
 
 main().then().catch();
