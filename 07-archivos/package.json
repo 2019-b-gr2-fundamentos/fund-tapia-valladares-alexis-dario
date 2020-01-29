@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "(tsc 01-archivos.ts --target ES5 || echo) && node 01-archivos.js"
+    "test": "(tsc 01.1-archivos.ts --target ES5 || echo) && node 01.1-archivos.js"
   },
   "author": "",
   "license": "ISC",
