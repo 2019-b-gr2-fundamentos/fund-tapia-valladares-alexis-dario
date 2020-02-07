@@ -4,18 +4,69 @@ import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts';
 async function main(){
 
-    let contador = 1;
+   
     const contenidoArchivo = leerArchivo(
         './ejemplo.txt'
     );
     console.log('contenidoArchivo', contenidoArchivo);
-    let arregloCargadoDeArchivo;
-    try{
-        arregloCargadoDeArchivo=JSON.parse(contenidoArchivo);
-    }catch(error){
-        arregloCargadoDeArchivo=[];
-        console.error('Error parseanddo archivo')
+    // PARSEAR -> TEXTO -> Estructura en memoria
+    /*
+    {
+        "nombre":"Adrian"
     }
+    <universidad>
+        <factultad></facultad>
+    </universidad>
+    */
+    let arregloCargadoDeArchivo; // undefined
+    try{
+        arregloCargadoDeArchivo = JSON
+                .parse(contenidoArchivo);
+    } catch(error){
+        arregloCargadoDeArchivo = [
+            {"id":1,"nombre":"Juanito"},
+            {"id":2,"nombre":"Pepito"}
+        ];
+        console.error('Error parseando archivo');
+    }
+
+    let contador = 3;
+
+    // OPERADORES
+    let minimoId = -1;
+    arregloCargadoDeArchivo
+        .forEach( // NO ENVIA NADA y NO DEVUELVE NADA
+            // ITERAR
+            function(valorActual){
+                const idActual = valorActual.id;
+                if(idActual > minimoId){
+                    minimoId = idActual
+                }
+            }
+        );
+    minimoId = minimoId + 1;
+    contador = minimoId;
+    /*
+    try{
+        console.log('1');
+        console.log('2');
+        console.log('3');
+        // Syntax Error}
+        let a = 1;
+        let a = 2;
+        let a = 3; // ESTA MAL!
+        console.log(123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123)
+        throw new ReferenceError("EL ARCHIVO ESTA MAL PARSEADO");
+        console.log('4');
+        console.log('5');
+    }catch(error){
+        console.log(error);
+        console.log(':3')
+    }
+    */
+   
+
+
     const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
     const arregloPreguntas = [
         { 
@@ -81,10 +132,12 @@ async function main(){
     console.log(estudianteEncontrado);
 
     const arregloTexto = JSON.stringify(arregloEstudiantes);
+    // JSON.stringify -> Convierte objeto o arreglo en memoria
+    //                -> a texto
     console.log(arregloTexto);
     escribirArchivo(
-         './ejemplo.txt',
-         arregloTexto
+        './ejemplo.txt',
+        arregloTexto
     );
 }
 
