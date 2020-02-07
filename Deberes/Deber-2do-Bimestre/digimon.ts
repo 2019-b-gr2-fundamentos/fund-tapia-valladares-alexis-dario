@@ -1,8 +1,25 @@
 import {propiedadesDigimon} from './interfaces/propiedades.interface'
+import {eliminarArchivo} from './read&write/borrar';
+import {escribirArchivo} from './read&write/escribir';
+import {leerArchivo} from './read&write/leer';
 import * as prompts from 'prompts';
 
-let id = 1;
-let arregloDigimones: propiedadesDigimon[] = [];
+let id = 0;
+const contenidoArchivo = leerArchivo('./registroDigimon.txt');
+let arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+let minimoAid = -1;
+    arregloCargadoDeArchivo
+        .forEach(
+            function(valorActual){
+                const idActual = valorActual.Aid;
+                if(idActual > minimoAid){
+                    minimoAid = idActual;
+                }
+            }
+        );
+    minimoAid = minimoAid + 1;
+            id = minimoAid;
+let arregloDigimones: propiedadesDigimon[] = arregloCargadoDeArchivo;
 
 async function nuevoDigimon(){
 
@@ -44,6 +61,13 @@ async function nuevoDigimon(){
     };
     id = id+1;
     arregloDigimones.push(nuevoDigimon);
+    const arregloTexto = JSON.stringify(arregloDigimones);
+    // JSON.stringify -> Convierte objeto o arreglo en memoria
+    //                -> a texto
+    escribirArchivo(
+        './registroDigimon.txt',
+        arregloTexto
+    );
     menu().then().catch();
 }
 
@@ -143,6 +167,13 @@ async function actualizarDigimon(){
         console.log('Esa Propiedad no existe');
     };
     console.log('Actualizacion existosa del Digimon :', arregloDigimones[digimonEncontrado]);
+    const arregloTexto = JSON.stringify(arregloDigimones);
+    // JSON.stringify -> Convierte objeto o arreglo en memoria
+    //                -> a texto
+    escribirArchivo(
+        './registroDigimon.txt',
+        arregloTexto
+    );
     menu().then().catch();
     return arregloDigimones
 };
@@ -158,13 +189,22 @@ async function boorrarDigimon(){
         }
     );
     arregloDigimones.splice(digimonEncontrado, 1);
+    
     console.log('El nuevo registro de arregloDigimones es:', arregloDigimones);
+    const arregloTexto = JSON.stringify(arregloDigimones);
+    // JSON.stringify -> Convierte objeto o arreglo en memoria
+    //                -> a texto
+    escribirArchivo(
+        './registroDigimon.txt',
+        arregloTexto
+    );
     menu().then().catch();
     return arregloDigimones
 }
 
 function main(){
-    nuevoDigimon().then().catch();
+    
+    menu().then().catch();
 
 }
 

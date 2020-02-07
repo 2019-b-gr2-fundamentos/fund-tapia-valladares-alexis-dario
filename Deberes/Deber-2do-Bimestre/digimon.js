@@ -36,12 +36,26 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var escribir_1 = require("./read&write/escribir");
+var leer_1 = require("./read&write/leer");
 var prompts = require("prompts");
-var id = 1;
-var arregloDigimones = [];
+var id = 0;
+var contenidoArchivo = leer_1.leerArchivo('./registroDigimon.txt');
+var arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+var minimoAid = -1;
+arregloCargadoDeArchivo
+    .forEach(function (valorActual) {
+    var idActual = valorActual.Aid;
+    if (idActual > minimoAid) {
+        minimoAid = idActual;
+    }
+});
+minimoAid = minimoAid + 1;
+id = minimoAid;
+var arregloDigimones = arregloCargadoDeArchivo;
 function nuevoDigimon() {
     return __awaiter(this, void 0, void 0, function () {
-        var arregloPreguntas, digimones, nuevoDigimon;
+        var arregloPreguntas, digimones, nuevoDigimon, arregloTexto;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -85,6 +99,10 @@ function nuevoDigimon() {
                     };
                     id = id + 1;
                     arregloDigimones.push(nuevoDigimon);
+                    arregloTexto = JSON.stringify(arregloDigimones);
+                    // JSON.stringify -> Convierte objeto o arreglo en memoria
+                    //                -> a texto
+                    escribir_1.escribirArchivo('./registroDigimon.txt', arregloTexto);
                     menu().then().catch();
                     return [2 /*return*/];
             }
@@ -142,7 +160,7 @@ function listaDeDigimons() {
 ;
 function actualizarDigimon() {
     return __awaiter(this, void 0, void 0, function () {
-        var recorderis, idDigimon, digimonEncontrado, propiedadAEditar, propiedadEdicion, nuevoNombre, nuevaRaza, nuevoAtributo, nuevaEvolucion, nuevaTemporada;
+        var recorderis, idDigimon, digimonEncontrado, propiedadAEditar, propiedadEdicion, nuevoNombre, nuevaRaza, nuevoAtributo, nuevaEvolucion, nuevaTemporada, arregloTexto;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, prompts({
@@ -233,6 +251,10 @@ function actualizarDigimon() {
                 case 14:
                     ;
                     console.log('Actualizacion existosa del Digimon :', arregloDigimones[digimonEncontrado]);
+                    arregloTexto = JSON.stringify(arregloDigimones);
+                    // JSON.stringify -> Convierte objeto o arreglo en memoria
+                    //                -> a texto
+                    escribir_1.escribirArchivo('./registroDigimon.txt', arregloTexto);
                     menu().then().catch();
                     return [2 /*return*/, arregloDigimones];
             }
@@ -242,7 +264,7 @@ function actualizarDigimon() {
 ;
 function boorrarDigimon() {
     return __awaiter(this, void 0, void 0, function () {
-        var idToErase, digimonEncontrado;
+        var idToErase, digimonEncontrado, arregloTexto;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, prompts({
@@ -257,6 +279,10 @@ function boorrarDigimon() {
                     });
                     arregloDigimones.splice(digimonEncontrado, 1);
                     console.log('El nuevo registro de arregloDigimones es:', arregloDigimones);
+                    arregloTexto = JSON.stringify(arregloDigimones);
+                    // JSON.stringify -> Convierte objeto o arreglo en memoria
+                    //                -> a texto
+                    escribir_1.escribirArchivo('./registroDigimon.txt', arregloTexto);
                     menu().then().catch();
                     return [2 /*return*/, arregloDigimones];
             }
@@ -264,6 +290,6 @@ function boorrarDigimon() {
     });
 }
 function main() {
-    nuevoDigimon().then().catch();
+    menu().then().catch();
 }
 main();
