@@ -11,7 +11,7 @@ let minimoAid = -1;
     arregloCargadoDeArchivo
         .forEach(
             function(valorActual){
-                const idActual = valorActual.Aid;
+                const idActual = valorActual.id;
                 if(idActual > minimoAid){
                     minimoAid = idActual;
                 }
