@@ -45,7 +45,7 @@ var arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
 var minimoAid = -1;
 arregloCargadoDeArchivo
     .forEach(function (valorActual) {
-    var idActual = valorActual.Aid;
+    var idActual = valorActual.id;
     if (idActual > minimoAid) {
         minimoAid = idActual;
     }
