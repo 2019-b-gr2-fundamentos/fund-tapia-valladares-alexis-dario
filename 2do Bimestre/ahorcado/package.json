@@ -1,0 +1,14 @@
+{
+  "name": "ahorcado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ahorcado": "(tsc ahorcado.ts --target ES5 || echo) && node ahorcado.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.3.1"
+  }
+}
