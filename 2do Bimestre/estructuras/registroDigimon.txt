@@ -1,1 +1,1 @@
-[{"id":0,"nombre":"agumon","raza":"oscuri","atributo":"virus","evolucion":"megaagumon","temporada":3}]
+[{"id":0,"nombre":"agumon","raza":"oscuri","atributo":"virus","evolucion":"megaagumon","temporada":3},{"id":1,"nombre":"qwe","raza":"qwe","atributo":"qwe","evolucion":"qwe","temporada":""},{"id":2,"nombre":"ert","raza":"etr","atributo":"ert","evolucion":"ert","temporada":56}]
