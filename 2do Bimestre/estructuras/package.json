@@ -1,0 +1,15 @@
+{
+  "name": "deber-2do-bimestre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "digimon.js",
+  "dependencies": {
+    "prompts": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "digimon": "(tsc digimon.ts --target ES5 || echo) && node digimon.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
