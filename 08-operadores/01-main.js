@@ -41,9 +41,7 @@ function main() {
     //RECIBIMOS ->Nuevo arreglo con valores filtrados
     var respuestaFilter = arregloEstudiante
         .filter(function (valorActual, i, arreglo) {
-        var condicion1 = valorActual.nota >= 7;
-        var condicion2 = valorActual.nota <= 5;
-        return condicion1 || condicion2;
+        return valorActual.nota > 6;
     });
     console.log('Respuesta Filter', respuestaFilter);
     console.log('arreglo de estudaintes', arregloEstudiante);
@@ -51,7 +49,7 @@ function main() {
         console.log('Valor: ', valorActual);
         console.log('Indice: ', i);
         console.log('Arreglo: ', arr);
-        return valorActual.nota >= 7;
+        return valorActual.nota > 7;
     });
     console.log('respuestaFilterNuestro', respuestaFilterNuestro);
     console.log('arregloEstudiantes', arregloEstudiante);

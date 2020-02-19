@@ -21,7 +21,7 @@ var win = 0;
 while (vidas > 0) {
     win = 0;
     var acierto = 0;
-    var b = prompt("escribe una letra", "a-z");
+    var b = prompt("escribe una letra , a-z: ");
     console.log(b);
     for (var i = 0; i < a; i++) { // compara la letra con el string correcto
         if (Z[i] == b) // mostrar los aciertos
